@@ -1,0 +1,667 @@
+/* =====================================
+   RAJ TRAVELS - COMPLETE WEBSITE DESIGN
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #ff9800;
+    --orange-dark: #e88700;
+    --navy: #142b49;
+    --text: #26364b;
+    --muted: #718096;
+    --white: #ffffff;
+    --green: #20bf6b;
+    --border: #e6ebf1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, #fff3dd 0, transparent 35%),
+        linear-gradient(135deg, #f5f8fc, #edf3f9);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 75px;
+}
+
+/* HEADER */
+
+.site-header {
+    width: 100%;
+    min-height: 82px;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(20, 43, 73, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 38px;
+}
+
+.logo strong {
+    display: block;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo small {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+.header-call {
+    background: var(--navy);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.header-call:hover {
+    background: var(--orange-dark);
+}
+
+/* MAIN LAYOUT */
+
+.app-container {
+    width: min(1200px, 92%);
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+    gap: 30px;
+    align-items: start;
+}
+
+.main-left {
+    min-width: 0;
+}
+
+.main-right {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* HERO */
+
+.welcome-label {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #fff0d4;
+    color: #9c5a00;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.hero-text h2 {
+    color: var(--navy);
+    font-size: clamp(30px, 3.4vw, 46px);
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.highlight {
+    color: var(--orange-dark);
+}
+
+.hero-text p {
+    margin-top: 14px;
+    margin-bottom: 24px;
+    color: #65758b;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* TRIP BUTTONS */
+
+.trip-types {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.btn-trip {
+    border: 1px solid #dbe3ed;
+    background: white;
+    color: #56657a;
+    padding: 11px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-trip:hover,
+.btn-trip.active {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+/* BOOKING CARD */
+
+.booking-card {
+    background: white;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid #e9edf3;
+    box-shadow: 0 12px 35px rgba(20, 43, 73, 0.08);
+}
+
+.booking-title {
+    margin-bottom: 20px;
+}
+
+.booking-title h2 {
+    color: var(--navy);
+    font-size: 22px;
+}
+
+.booking-title p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* BOOKING GRID */
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.form-input {
+    min-width: 0;
+}
+
+.form-input label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #43536a;
+    margin-bottom: 8px;
+}
+
+.form-input input,
+.form-input select {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 12px;
+    border: 1px solid #dce3ec;
+    background: #fbfcfe;
+    border-radius: 9px;
+    outline: none;
+    color: #26364b;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.form-input input:focus,
+.form-input select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.12);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* GET QUOTE BUTTON */
+
+.btn-quote {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffad26, #f28a00);
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(242, 138, 0, 0.2);
+    transition: 0.2s;
+}
+
+.btn-quote span {
+    margin-left: 8px;
+}
+
+.btn-quote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(242, 138, 0, 0.28);
+}
+
+.form-note {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* FLEET SECTION */
+
+.fleet-section {
+    margin-top: 38px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.eyebrow {
+    color: var(--orange-dark);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 5px;
+    color: var(--navy);
+    font-size: 26px;
+}
+
+.fleet-badge {
+    background: white;
+    border: 1px solid var(--border);
+    color: #64748b;
+    padding: 8px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* VEHICLE CARDS */
+
+.mini-fleet {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.car-item {
+    background: white;
+    padding: 16px 13px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s;
+}
+
+.car-item:hover {
+    transform: translateY(-3px);
+    border-color: #ffc56b;
+    box-shadow: 0 8px 20px rgba(20, 43, 73, 0.06);
+}
+
+.vehicle-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: #fff3df;
+    border-radius: 12px;
+    font-size: 26px;
+}
+
+.car-item h3 {
+    color: var(--navy);
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.car-item p {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* MAP CARD */
+
+.map-card,
+.contact-card {
+    background: white;
+    padding: 22px;
+    border-radius: 17px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 28px rgba(20, 43, 73, 0.06);
+}
+
+.map-label {
+    color: var(--orange-dark);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.map-card h2,
+.contact-card h2 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.map-description,
+.contact-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 17px;
+}
+
+.map-card iframe {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    background: #edf2f7;
+}
+
+.address-text {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #53647b;
+    font-weight: 600;
+}
+
+.map-directions {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #dfe6ef;
+    border-radius: 9px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.map-directions:hover {
+    background: #f6f8fb;
+}
+
+/* CONTACT CARD */
+
+.contact-card {
+    background: linear-gradient(145deg, #fff9ef, #ffffff);
+    border-top: 4px solid var(--orange);
+}
+
+.contact-icon {
+    font-size: 30px;
+}
+
+.contact-call,
+.contact-whatsapp {
+    display: block;
+    padding: 13px 12px;
+    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.contact-call {
+    background: #eaf2ff;
+    color: #1765c0;
+}
+
+.contact-whatsapp {
+    background: #e3f9ec;
+    color: #138347;
+}
+
+.contact-call:hover {
+    background: #dceaff;
+}
+
+.contact-whatsapp:hover {
+    background: #d2f5e0;
+}
+
+/* FIXED BOTTOM BAR */
+
+.quick-contact {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.quick-contact a {
+    flex: 1;
+    padding: 17px 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.call-bar {
+    background: #1769d2;
+}
+
+.call-bar:hover {
+    background: #1055af;
+}
+
+.whatsapp-bar {
+    background: #20b968;
+}
+
+.whatsapp-bar:hover {
+    background: #159653;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+    .app-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .main-right {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-bottom: 65px;
+    }
+
+    .site-header {
+        min-height: 70px;
+        padding: 12px 4%;
+    }
+
+    .logo-icon {
+        font-size: 30px;
+    }
+
+    .logo strong {
+        font-size: 18px;
+    }
+
+    .logo small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .header-call {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .app-container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+    }
+
+    .trip-types {
+        gap: 7px;
+    }
+
+    .btn-trip {
+        padding: 10px 11px;
+        font-size: 11px;
+    }
+
+    .booking-card {
+        padding: 17px;
+    }
+
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .fleet-badge {
+        font-size: 9px;
+        padding: 7px 8px;
+    }
+
+    .mini-fleet {
+        grid-template-columns: 1fr;
+    }
+
+    .car-item {
+        padding: 13px;
+    }
+
+    .main-right {
+        grid-template-columns: 1fr;
+    }
+
+    .map-card,
+    .contact-card {
+        padding: 17px;
+    }
+
+    .quick-contact a {
+        padding: 15px 5px;
+        font-size: 12px;
+    }
+
+}
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 360px) {
+
+    .hero-text h2 {
+        font-size: 27px;
+    }
+
+    .btn-trip {
+        padding: 9px 8px;
+        font-size: 10px;
+    }
+
+    .fleet-badge {
+        display: none;
+    }
+
+}.vehicle-photo {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.car-item {
+    display: block;
+    overflow: hidden;
+}.vehicle-img {
+    width: 80px;          /* आप अपनी पसंद से साइज छोटा-बड़ा कर सकते हैं */
+    height: 60px;
+    object-fit: cover;    /* इससे फोटो स्ट्रेच या खराब नहीं होगी */
+    border-radius: 6px;   /* कोनों को हल्का सा घुमावदार बनाने के लिए */
+}

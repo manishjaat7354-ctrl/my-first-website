@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raj Travels | Taxi & Bus Booking</title>
+
+    <meta name="description" content="Raj Travels, Sardarshahar, Rajasthan. Taxi, car, SUV, Mini Traveller and bus booking across India.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="#" class="logo">
+            <span class="logo-icon">🚕</span>
+            <span>
+                <strong>RAJ TRAVELS</strong>
+                <small>SARDARSHAHAR, RAJASTHAN</small>
+            </span>
+        </a>
+
+        <a href="tel:9784758589" class="header-call">
+            📞 Call Now
+        </a>
+    </header>
+
+    <!-- MAIN SECTION -->
+    <main class="app-container">
+
+        <section class="main-left">
+
+            <div class="welcome-label">
+                ✨ YOUR TRAVEL PARTNER
+            </div>
+
+            <div class="hero-text">
+                <h1>
+                    Your Journey,<br>
+                    <span class="highlight">Our Responsibility!</span>
+                </h1>
+
+                <p>
+                    Book your Taxi, Car, SUV or Bus from
+                    Sardarshahar to anywhere in India.
+                    Travel comfortably with Raj Travels.
+                </p>
+            </div>
+
+            <!-- TRIP TYPE -->
+            <div class="trip-types">
+
+                <button type="button"
+                        class="btn-trip active"
+                        onclick="selectTrip(this, 'One Way')">
+                    ↗ One Way
+                </button>
+
+                <button type="button"
+                        class="btn-trip"
+                        onclick="selectTrip(this, 'Round Trip')">
+                    🔄 Round Trip
+                </button>
+
+                <button type="button"
+                        class="btn-trip"
+                        onclick="selectTrip(this, 'Tour Package')">
+                    🎒 Tour Package
+                </button>
+
+            </div>
+
+            <!-- BOOKING FORM -->
+            <section class="booking-card">
+
+                <div class="booking-title">
+                    <h2>Plan Your Journey</h2>
+                    <p>Enter your trip details to request a quote.</p>
+                </div>
+
+                <form id="bookingForm" onsubmit="sendBooking(event)">
+
+                    <div class="booking-grid">
+
+                        <div class="form-input">
+                            <label for="pickup">📍 Pickup Location</label>
+                            <input
+                                type="text"
+                                id="pickup"
+                                placeholder="e.g. Sardarshahar"
+                                required>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="destination">🏁 Drop Location</label>
+                            <input
+                                type="text"
+                                id="destination"
+                                placeholder="e.g. Jaipur"
+                                required>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="travelDate">📅 Travel Date</label>
+                            <input
+                                type="date"
+                                id="travelDate"
+                                required>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="passengers">👥 Passengers</label>
+                            <select id="passengers" required>
+                                <option value="">Select passengers</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11–17</option>
+                                <option>18–19</option>
+                                <option>20–42</option>
+                            </select>
+                        </div>
+
+                        <div class="form-input full-width">
+                            <label for="vehicle">🚘 Select Vehicle</label>
+                            <select id="vehicle" required>
+                                <option value="">Choose a vehicle</option>
+                                <option value="Toyota Etios">Toyota Etios</option>
+                                <option value="Maruti Dzire">Maruti Dzire</option>
+                                <option value="Maruti Ertiga">Maruti Ertiga</option>
+                                <option value="SUV">SUV</option>
+                                <option value="17 Seater Mini Traveller">17 Seater Mini Traveller</option>
+                                <option value="19 Seater Mini Traveller">19 Seater Mini Traveller</option>
+                                <option value="42 Seater Bus">42 Seater Bus</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn-quote">
+                        Get Booking Quote <span>➜</span>
+                    </button>
+
+                    <p class="form-note">
+                        Your booking request will open in WhatsApp.
+                        The fare will be confirmed by Raj Travels.
+                    </p>
+
+                </form>
+
+            </section>
+
+            <!-- VEHICLES -->
+            <section class="fleet-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">TRAVEL YOUR WAY</span>
+                        <h2>Our Vehicles</h2>
+                    </div>
+                    <span class="fleet-badge">7 Vehicle Categories</span>
+                </div>
+
+                <div class="mini-fleet">
+
+                    <article class="car-item">
+                        <img src="images/etios.jpg" alt="Toyota Etios" class="vehicle-img">
+                        <div>
+                            <h3>Toyota Etios</h3>
+                            <p>Comfortable Car</p>
+                        </div>
+                    </article>
+
+                    <article class="car-item">
+                        <img src="images/dzire.jpg" alt="Maruti Dzire" class="vehicle-img">
+                        <div>
+                            <h3>Maruti Dzire</h3>
+                            <p>Family Travel</p>
+                        </div>
+                    </article>
+
+                    <article class="car-item">
+                        <img src="images/ertiga.jpg" alt="Maruti Ertiga" class="vehicle-img">
+                        <div>
+                            <h3>Maruti Ertiga</h3>
+                            <p>Group Travel</p>
+                        </div>
+                    </article>
+
+                    <article class="car-item">
+                        <img src="images/suv.jpg" alt="SUV" class="vehicle-img">
+                        <div>
+                            <h3>SUV</h3>
+                            <p>Comfortable Journey</p>
+                        </div>
+                    </article>
+
+                    <article class="car-item">
+                        <img src="images/traveller17.jpg" alt="17 Seater Traveller" class="vehicle-img">
+                        <div>
+                            <h3>17 Seater Traveller</h3>
+                            <p>Group Trips</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- CONTACT & OFFICE LOCATION SECTION (UPDATED CODE) -->
+            <section class="location-section" style="margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+                <div class="section-heading" style="margin-bottom: 20px;">
+                    <span class="eyebrow" style="color: #e67e22; font-weight: bold; font-size: 14px; text-transform: uppercase;">FIND US HERE</span>
+                    <h2 style="margin: 5px 0 0 0; font-size: 24px;">Our Office Location</h2>
+                    <p style="color: #666; margin-top: 5px;">Raj Travels, Sardarshahar, Rajasthan</p>
+                </div>
+                
+                <!-- Your Exact Google Maps Location -->
+                <div class="map-container" style="width: 100%; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3508.1417323209675!2d74.51225837340127!3d28.44514359256933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDI2JzQyLjUiTiA3NMKwMzAnNTMuNCJF!5e0!3m2!1sen!2sin!4v1792700792833!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="380" 
+                        style="border:0; display:block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
